@@ -216,3 +216,20 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ============================================================
+# Neural-Elo project specific
+# ============================================================
+data/
+outputs/
+notebooks/.ipynb_checkpoints/
+
+# Keep the data README but ignore actual data files
+!data/README.md
+
+# Model checkpoints & artifacts
+models/
+*.pkl
+*.joblib
+*.pt
+*.pth
