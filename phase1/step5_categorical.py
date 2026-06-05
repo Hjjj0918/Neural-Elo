@@ -94,5 +94,5 @@ def _plot_map_analysis(df: pd.DataFrame, label_col: str) -> None:
 
     plt.suptitle("Map Dimension Analysis", fontsize=14, fontweight="bold")
     # rect=[left,bottom,right,top]: reserve top 7% for suptitle
-    plt.tight_layout(rect=[0, 0, 1, 0.93])
+    plt.tight_layout(rect=(0, 0, 1, 0.93))
     savefig("03_map_analysis")

@@ -87,5 +87,5 @@ def _plot_distributions(df: pd.DataFrame, feature_cols: list, label_col: str) ->
 
     plt.suptitle("Top 12 Features Distribution (by label correlation)",
                  fontsize=14, fontweight="bold")
-    plt.tight_layout(rect=[0, 0, 1, 0.93])
+    plt.tight_layout(rect=(0, 0, 1, 0.93))
     savefig("02_numeric_feature_distributions")

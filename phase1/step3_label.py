@@ -77,7 +77,7 @@ def _plot_label(counts: pd.Series, label_col: str, df: pd.DataFrame) -> None:
         [str(v) for v in counts.index], counts.values,
         color=bar_colors, edgecolor="black", linewidth=0.5,
     )
-    axes[0].set_title(f"'{label_col}' Distribution (Count)", fontsize=13)
+    axes[0].set_title(f'"{label_col}" Distribution (Count)', fontsize=13)
     axes[0].set_ylabel("Samples")
     # Place label inside the upper portion of each bar (white on dark, no overflow)
     for i, (val_name, val_count) in enumerate(zip(counts.index, counts.values)):
@@ -92,8 +92,8 @@ def _plot_label(counts: pd.Series, label_col: str, df: pd.DataFrame) -> None:
         counts.values, labels=[str(v) for v in counts.index],
         autopct="%1.1f%%", colors=bar_colors, explode=[0.02] * len(counts),
     )
-    axes[1].set_title(f"'{label_col}' Proportion", fontsize=13)
+    axes[1].set_title(f'"{label_col}" Proportion', fontsize=13)
 
     plt.suptitle("Label Balance Analysis", fontsize=14, fontweight="bold")
-    plt.tight_layout(rect=[0, 0, 1, 0.93])
+    plt.tight_layout(rect=(0, 0, 1, 0.93))
     savefig("01_label_distribution")

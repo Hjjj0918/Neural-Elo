@@ -60,7 +60,7 @@ def _plot_feature_label_corr(target_corr: pd.Series, label_col: str) -> None:
         palette=colors, legend=False, ax=ax, edgecolor="black", linewidth=0.3,
     )
     ax.axvline(0, color="black", linewidth=1)
-    ax.set_title(f"Top 20 Features vs '{label_col}' Correlation", fontsize=14, fontweight="bold")
+    ax.set_title(f'Top 20 Features vs "{label_col}" Correlation', fontsize=14, fontweight="bold")
     ax.set_xlabel("Pearson Correlation Coefficient")
     plt.tight_layout()
     savefig("04_feature_label_correlation")

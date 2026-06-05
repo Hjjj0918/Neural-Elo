@@ -30,17 +30,17 @@ def run(
   |                    EDA SUMMARY REPORT                              |
   +-------------------------------------------------------------------+
   |  Dataset:        CS:GO Round Winner Classification                 |
-  |  Samples:        {n_total:>10,}                                            |
-  |  Total features: {n_features:>10,}                                            |
-  |    - Numeric:    {len(numeric_features):>10,}                                            |
-  |    - Categorical:{len(cat_features):>10,}                                            |
-  |  Label column:   {label_col:<35s}   |
-  |  Label dist:     {str(label_dist):<35s}   |
-  |  Missing cols:   {len(missing_df):>10,}                                            |
-  |  Duplicate rows: {df.duplicated().sum():>10,}                                            |
-  |  Memory usage:   {df.memory_usage(deep=True).sum()/1024**2:.1f} MB                                    |
+  |  Samples:        {n_total:>10,}                                    |
+  |  Total features: {n_features:>10,}                                 |
+  |    - Numeric:    {len(numeric_features):>10,}                      |
+  |    - Categorical:{len(cat_features):>10,}                          |
+  |  Label column:   {label_col:<35s}                                  |
+  |  Label dist:     {str(label_dist):<35s}                            |
+  |  Missing cols:   {len(missing_df):>10,}                            |
+  |  Duplicate rows: {df.duplicated().sum():>10,}                      |
+  |  Memory usage:   {df.memory_usage(deep=True).sum()/1024**2:.1f} MB |
   +-------------------------------------------------------------------+
-  |  Charts saved to: {str(OUTPUT_DIR):<35s}   |
+  |  Charts saved to: {str(OUTPUT_DIR):<35s}                           |
   +-------------------------------------------------------------------+
 
   Phase 1 EDA complete!
