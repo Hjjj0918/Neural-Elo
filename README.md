@@ -89,12 +89,26 @@ Neural-Elo/
 ├── README.md
 ├── README_CN.md
 ├── requirements.txt
-├── phase1_eda.py                 # EDA: data loading, cleaning, correlation
+├── phase1_eda.py                 # Thin entry point → delegates to src/phase1/
+├── src/
+│   └── phase1/                   # Phase 1: EDA package
+│       ├── __init__.py
+│       ├── config.py             # Shared settings, matplotlib, savefig()
+│       ├── run_all.py            # Orchestrator: runs all steps in sequence
+│       ├── step0_find_data.py    # Data file locator
+│       ├── step1_load.py         # Load & schema inspection
+│       ├── step2_missing.py      # Missing value analysis
+│       ├── step3_label.py        # Label analysis (chart 01)
+│       ├── step4_numeric.py      # Numeric feature analysis (chart 02)
+│       ├── step5_categorical.py  # Categorical / map analysis (chart 03)
+│       ├── step6_correlation.py  # Correlation analysis (charts 04, 05)
+│       ├── step7_pitfalls.py     # Data pitfalls check
+│       └── step8_summary.py      # Summary report
 ├── data/
 │   ├── download_dataset.py       # Kaggle dataset downloader (kagglehub)
 │   └── csgo_round_snapshots.csv  # ~122K rows x 97 cols (git-ignored)
 └── outputs/
-    └── phase1/                   # EDA charts & summary report
+    └── phase1/                   # EDA charts & readme
 ```
 
 ---
@@ -104,5 +118,6 @@ Neural-Elo/
 ```bash
 pip install -r requirements.txt
 python data/download_dataset.py   # downloads ~48 MB from Kaggle
-python phase1_eda.py              # runs full EDA, outputs charts to outputs/phase1/
+python -m src.phase1.run_all      # runs full EDA, outputs charts to outputs/phase1/
+# or: python phase1_eda.py        # thin wrapper, does the same thing
 ```

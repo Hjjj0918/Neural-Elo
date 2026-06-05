@@ -90,12 +90,26 @@ Neural-Elo/
 ├── README.md
 ├── README_CN.md                   # 本文件
 ├── requirements.txt
-├── phase1_eda.py                  # EDA：数据加载、清洗、相关性分析
+├── phase1_eda.py                  # 入口 → 委托给 src/phase1/
+├── src/
+│   └── phase1/                    # 阶段一：EDA 包
+│       ├── __init__.py
+│       ├── config.py              # 共享配置、matplotlib、savefig()
+│       ├── run_all.py             # 总调度：按顺序运行所有步骤
+│       ├── step0_find_data.py     # 定位数据文件
+│       ├── step1_load.py          # 加载 & Schema 检查
+│       ├── step2_missing.py       # 缺失值分析
+│       ├── step3_label.py         # 标签分析 (图 01)
+│       ├── step4_numeric.py       # 数值特征分析 (图 02)
+│       ├── step5_categorical.py   # 分类/地图分析 (图 03)
+│       ├── step6_correlation.py   # 相关性分析 (图 04, 05)
+│       ├── step7_pitfalls.py      # 数据陷阱排查
+│       └── step8_summary.py       # 摘要报告
 ├── data/
 │   ├── download_dataset.py        # Kaggle 数据集下载器（kagglehub）
 │   └── csgo_round_snapshots.csv   # ~12.2万行 × 97列（git-ignored）
 └── outputs/
-    └── phase1/                    # EDA 图表与摘要报告
+    └── phase1/                    # EDA 图表与说明
 ```
 
 ---
@@ -105,5 +119,6 @@ Neural-Elo/
 ```bash
 pip install -r requirements.txt
 python data/download_dataset.py   # 从 Kaggle 下载约 48 MB 数据
-python phase1_eda.py              # 运行完整 EDA，图表输出到 outputs/phase1/
+python -m src.phase1.run_all      # 运行完整 EDA，图表输出到 outputs/phase1/
+# 或: python phase1_eda.py        # 入口包装器，效果相同
 ```
