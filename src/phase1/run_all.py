@@ -4,7 +4,8 @@
 =============================================================================
 
  Usage:
-     python -m phase1.run_all
+     python -m src.phase1.run_all
+     python phase1_eda.py              # thin wrapper at project root
 =============================================================================
 """
 
