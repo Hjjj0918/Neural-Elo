@@ -13,8 +13,7 @@ from .config import RAW_CSV
 # Zero-variance weapon columns identified in Phase 1 EDA
 # These are weapons the opposite faction cannot purchase:
 # CT can't buy bizon, g3sg1, negev, r8revolver, sawedoff
-# T can't buy m249 (wait, T CAN buy m249 — but the data says t_weapon_m249 is zero-var)
-# Checking: in competitive CS:GO, m249 is essentially never bought by either side
+# T can buy m249 but it's extremely rare and has no impact on model performance
 ZERO_VAR_COLS = [
     "ct_weapon_bizon",
     "ct_weapon_g3sg1",
@@ -26,7 +25,6 @@ ZERO_VAR_COLS = [
 
 # Near-constant threshold: >99% of values are 0
 NEAR_CONST_THRESHOLD = 0.99
-
 
 def identify_near_constant_cols(df: pd.DataFrame) -> list:
     """Find weapon columns where >99% of values are 0."""
