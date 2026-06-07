@@ -25,7 +25,7 @@ GRENADE_PAIRS = [
     ("ct_grenade_hegrenade", "t_grenade_hegrenade"),
     ("ct_grenade_flashbang", "t_grenade_flashbang"),
     ("ct_grenade_smokegrenade", "t_grenade_smokegrenade"),
-    ("ct_grenade_incendiarygrenade", "t_grenade_molotovgrenade"),
+    ("ct_grenade_incendiarygrenade", "t_grenade_molotovgrenade"), # different names but same function
     ("ct_grenade_decoygrenade", "t_grenade_decoygrenade"),
 ]
 

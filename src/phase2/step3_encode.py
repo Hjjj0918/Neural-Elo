@@ -52,8 +52,9 @@ def run(df: pd.DataFrame) -> pd.DataFrame:
 
     # --- 3b. bomb_planted as int ---
     if "bomb_planted" in result.columns:
+        # True -> 1, False -> 0
         result["bomb_planted"] = result["bomb_planted"].astype(int)
-        print(f"  bomb_planted: kept as 0/1 (mean={result['bomb_planted'].mean():.3f})")
+        print(f"  bomb_planted: kept as 0/1 (mean={result['bomb_planted'].mean():.3f})") 
     else:
         print(f"  [WARN] 'bomb_planted' column not found")
 

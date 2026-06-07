@@ -29,7 +29,7 @@ def run(df_clean: pd.DataFrame) -> pd.DataFrame:
 
     # --- 4a. Time remaining (normalized) ---
     if "time_left" in df_clean.columns:
-        result["time_remaining_pct"] = df_clean["time_left"] / 175.0
+        result["time_remaining_pct"] = df_clean["time_left"] / 175.0 # convert time to 0 - 1
         derived.append("time_remaining_pct")
         print(f"  time_remaining_pct: range [{result['time_remaining_pct'].min():.2f}, "
               f"{result['time_remaining_pct'].max():.2f}]")

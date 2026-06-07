@@ -61,7 +61,7 @@ def run() -> tuple[pd.DataFrame, pd.Series]:
     print(f"  Dropped:  {n_dup:,} duplicate rows ({n_dup/n_initial*100:.2f}%)")
 
     # --- 1b. Extract labels ---
-    y = (df["round_winner"].str.upper() == "CT").astype(int)
+    y = (df["round_winner"].str.upper() == "CT").astype(int) # allow "CT" or "ct"
     df = df.drop(columns=["round_winner"])
 
     # --- 1c. Drop zero-variance columns ---
