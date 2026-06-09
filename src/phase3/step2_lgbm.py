@@ -53,9 +53,9 @@ def run(data: dict) -> dict:
     )
 
     # ---- Predictions ----
-    y_train_prob = model.predict_proba(X_train)[:, 1]
-    y_val_prob = model.predict_proba(X_val)[:, 1]
-    y_test_prob = model.predict_proba(X_test)[:, 1]
+    y_train_prob = np.asarray(model.predict_proba(X_train))[:, 1]
+    y_val_prob = np.asarray(model.predict_proba(X_val))[:, 1]
+    y_test_prob = np.asarray(model.predict_proba(X_test))[:, 1]
 
     # ---- Metrics ----
     metrics = {
