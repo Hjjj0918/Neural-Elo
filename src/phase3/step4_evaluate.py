@@ -78,10 +78,6 @@ if __name__ == "__main__":
     from src.phase3.step3_mlp import run as mlp
 
     data = load()
-    # Use saved test labels
-    global y_test_true
-    y_test_true = data["y_test"]
-
     lgbm_result = lgbm(data)
     mlp_result = mlp(data)
-    run(lgbm_result, mlp_result)
+    run(lgbm_result, mlp_result, data["y_test"])
